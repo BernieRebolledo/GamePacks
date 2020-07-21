@@ -1,0 +1,317 @@
+// Script was generated with < FIFA Series Skills Generator > ver. 7.25 Date :07/20/20 Time: 11:15:01 p. m.
+//------------------------------------------------------------------------
+/********************************************************************************************** 
+This Script was made and intended for www.cronusmax.com & CronusMAX ONLY.                     * 
+UNLESS permission is given by the creator and/or copywritee,                                  * 
+All rights reserved. This material may not be reproduced, displayed,                          * 
+modified or distributed without the express prior written permission of the                   * 
+copyright holder. For permission, contact CronusMax.                                          * 
+    __  ____   ___   ____   __ __  _____ ___ ___   ____  __ __                                * 
+   /  ]|    \ /   \ |    \ |  |  |/ ___/|   |   | /    ||  |  |                               * 
+  /  / |  D  )     ||  _  ||  |  (   \_ | _   _ ||  o  ||  |  |                               * 
+ /  /  |    /|  O  ||  |  ||  |  |\__  ||  \_/  ||     ||_   _|                               * 
+/   \_ |    \|     ||  |  ||  :  |/  \ ||   |   ||  _  ||     |                               * 
+\     ||  .  \     ||  |  ||     |\    ||   |   ||  |  ||  |  |                               * 
+ \____||__|\_|\___/ |__|__| \__,_| \___||___|___||__|__||__|__|                               * 
+                                                                                              * 
+************************************************************************************************/ 
+                                                                       
+/***********************************************************************
+                                                                       
+ ________  ______  ________   ______          ______    ______              
+|        \|      \|        \ /      \        /      \  /      \             
+| $$$$$$$$ \$$$$$$| $$$$$$$$|  $$$$$$\      |  $$$$$$\|  $$$$$$\            
+| $$__      | $$  | $$__    | $$__| $$       \$$__| $$| $$$\| $$            
+| $$  \     | $$  | $$  \   | $$    $$       /      $$| $$$$\ $$            
+| $$$$$     | $$  | $$$$$   | $$$$$$$$      |  $$$$$$ | $$\$$\$$            
+| $$       _| $$_ | $$      | $$  | $$      | $$_____ | $$_\$$$$            
+| $$      |   $$ \| $$      | $$  | $$      | $$     \ \$$  \$$$            
+ \$$       \$$$$$$ \$$       \$$   \$$       \$$$$$$$$  \$$$$$$             
+                                                                            
+                                                                         
+*************************************************************************/
+                                                                         
+///////////////////  FIFA 20 SKILLS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//-----------------------------------------------------------------------
+                                                                         
+///\ 0. None.//\0. None.//\0. None.//\0. None.//\
+///\ default Skill : 0. None.
+///\ One Way Direction Skill : 1. Fake Shot 3*
+                                
+//       DESCRIPTIONS - INSTRUCTION                      
+//  Switch Skills                                        
+//                                                       
+// hold button : PS4_L1   and then press : 
+//  button :         will switch to Skill :                                    
+//  D-pad UP    => 0. None.               
+//  D-pad RIGHT => 0. None.               
+//  D-pad DOWN  => 0. None.               
+//  D-pad LEFT  => 0. None.               
+//                   will switch to default Skill :                 
+// hold button :PS4_L1 + (PS4 SHARE / XB1 VIEW) => 0. None.      
+//                                                                        
+//   ACTIVATE SKILLS                                                      
+//  Skills with Left and Right exit ( direction )                         
+//  Double tap : PS4_L1 Modifier Button to start skill to the Left 
+//  Double tap : PS4_R1 Modifier Button to start skill to the Right
+//                                                                       
+//   Skills with one direction ( no exit )                               
+//                                                                       
+//    = 0.   None
+//-----------------------------------------------------------------------
+//-------------------------------------------------------------- 
+// DECLARATIONS                                                  
+//-------------------------------------------------------------- 
+define timelimit     = 300; // Time to Double click     
+//////////////////////////////////////////////////////////////////
+// YOUR BUTTON LAYOUT 
+define PaceCtrol     = PS4_L2; // Pace Control
+define FinesseShot   = PS4_R2; // Finesse Shot
+define PlayerRun     = PS4_L1; // Player Run  
+define ShotBtn       = PS4_SQUARE; // Shot Btn  
+define SprintBtn     = PS4_R1; // Sprint Btn 
+define PassBtn       = PS4_CROSS; // Pass Btn 
+define MOVE_X        = PS4_LX;        
+define MOVE_Y        = PS4_LY;        
+define SKILL_STICK_X = PS4_RX;        
+define SKILL_STICK_Y = PS4_RY;        
+//-------------------------------------------------------------- 
+// SKILLS LIST                                                   
+//-------------------------------------------------------------- 
+define FAKE_SHOT_SKILL                 = 1;// Fake Shot                    
+define HEEL_TO_HEEL_FLICK_SKILL        = 2;// Heel to Heel                 
+define HEEL_FLICK_TURN_SKILL           = 3;// R1 + Heel to Heel            
+define RAINBOW_SKILL                   = 4;// Simple Rainbow               
+define DRAG_BACK_SOMBRERO_SKILL        = 5;// Drag Back + R3 press         
+define FAKE_PASS_SKILL                 = 6;// R2 + Fake Shot               
+define DRAG_BACK_UNIVERSAL_SKILL       = 7;// hold R1, LS down              
+define STEP_OVER_FEINT_SKILL           = 8;//                               
+define DRAG_TO_DRAG_SKILL              = 9;// L2 + Fake Shot + LS zero      
+define HOCUS_POCUS_SKILL               =10;// RS D to L, half circle L to R 
+define TRIPLE_ELASTICO_SKILL           =11;// RS D to R, half circle R to L 
+define ELASTICO_SKILL                  =12;// half circle from R to L       
+define REVERSE_ELASTICO_SKILL          =13;// half sircle from L to R       
+define CRUYFF_TURN_SKILL               =14;// Fake Shot + LS down           
+//--------------------------------------------------------------            
+define LA_CROQUETA_SKILL               =15;// L1 + RS                       
+define RONALDO_CHOP_SKILL              =16;// L2 + Fake Shot                 
+define ROULETTE_SKILL                  =17;// Roulette                       
+define FLAIR_ROULETTE_SKILL            =18;// L1 + Roulette                  
+define BALL_ROLL_SKILL                 =19;// Ball Roll                     
+define BERBA_MCGEADY_SPIN_SKILL        =20;// RS Up , <-/->                  
+define BOLASIE_FLICK_SKILL             =21;// R1 + BERBA Spin                 
+define TORNADO_SKILL                   =22;// L1 + Berba Spin                  
+define THREE_TOUCH_ROULETTE_SKILL      =23;// L2 + RS Down, <-/->               
+define ALTERNATIVE_ELASTICO_CHOP_SKILL =24;// R1 + RS Down, <-/->                 
+define BALL_ROLL_CHOP_SKILL            =25;// hold RS <-/ hold RS ->                
+define FEINT_AND_EXIT_SKILL            =26;// hold L1 + RS half circle from L to R / from R to L 
+define FEINT_L_EXIT_R_SKILL            =27;// RS half circle from L to R / from R to L 
+define LATERAL_HEEL_TO_HEEL_SKILL      =28;//  L1 + RS <-/->
+define WAKA_WAKA_SKILL                 =29;// WAKA WAKA 
+define BODY_FEINT_SKILL                =30;// BODY FEINT 
+//--------------------------------------------------------------   
+define defaultSkill  = 0;// 0. None.
+//--------------------------------------------------------------   
+//--------------------------------------------------------------   
+// VARIABLES                                                       
+//--------------------------------------------------------------   
+int b_tap;     
+int DpadUP  = 0;// Skill for D pad-UP NONE 
+int DpadR   = 0;// Skill for D pad-RIGHT NONE
+int DpadD   = 0;// Skill for D pad-DOWN  NONE
+int DpadL   = 0;// Skill for D pad-LEFT NONE 
+                                               
+int LX, LY;          // Direction of Left Stick         
+int right_on ;                            
+int w_rstick  = 50;                        
+int OnOffMods = TRUE;                            
+int Sombrero;     
+                
+                                               
+//--------------------------------------------------------------
+// MAIN BLOCK                                                   
+//--------------------------------------------------------------
+main {                                         
+                                                
+                                                
+                                                
+                                      
+    // ON / OFF All Skills          
+    if(get_val(PS4_SHARE)){                 
+         if(event_press(PS4_CROSS))OnOffMods = !OnOffMods; 
+         set_val(PS4_CROSS,0);                        
+    }                                        
+                                                
+                                                
+    ///////////////////////////////////////////////////////////// 
+    //                                                           
+    if(abs(get_val(MOVE_X))> 60 || abs(get_val(MOVE_Y))> 60){   
+	       LX = get_val(MOVE_X);                                      
+	       LY = get_val(MOVE_Y);                                      
+    }                                                           
+    //----------------------------------------------------------- 
+                                      
+                                               
+       // CHANGE SKILLS  Bank 1                 
+       if(get_val(PS4_L1)) // hold button : PS4_L1
+         {//-----------------------------------------------------------
+               if(get_val(13))  { ACTIVE = DpadUP;}// NONE
+               if(get_val(16))  { ACTIVE = DpadR ;}// NONE
+               if(get_val(14))  { ACTIVE = DpadD ;}// NONE
+               if(get_val(15))  { ACTIVE = DpadL ;}// NONE
+               if(get_val( 1))  { ACTIVE = defaultSkill ;} // set Skill to default1 Skill =>  NONE
+               set_val(13,0);                        
+               set_val(14,0);                        
+               set_val(15,0);                        
+               set_val(16,0);                        
+               set_val( 1,0);                       
+         }//-----------------------------------------------------------
+                                                
+   if(OnOffMods) { // all Skills mode           
+                                                
+                                                
+                                                
+      // Bank 1 run to the LEFT                 
+      //--------------------------------------------------------------
+      /////////////////////////////////////////////////////////
+      //   double click : PS4_L1
+       if (event_press(PS4_L1) && !b_tap) {      
+                   combo_run(ONE_TAP);                  
+       // Second tap                                    
+       }else if (event_press(PS4_L1) && b_tap ){ 
+                  b_tap=FALSE;                         
+                  right_on = 0;combo_run(DIRECTION_OF_L_ANALOG);
+       }                                               
+      //-------------------------------------------------------------- 
+      // Bank 1 run to the RIGHT                
+      //--------------------------------------------------------------
+      ////////////////////////////////////////////////////////// 
+      //  double click :PS4_R1
+       if (event_press(PS4_R1) && !b_tap) {      
+                   combo_run(ONE_TAP);                  
+       // Second tap                                    
+       }else if (event_press(PS4_R1) && b_tap ){ 
+                  b_tap=FALSE;                         
+                  right_on = 1;combo_run(DIRECTION_OF_L_ANALOG);
+       }                                               
+                                                
+                                                
+                                                
+   //--------------------------------------------------------------
+   // Skills with one direction  press : PS4_R3                
+   //--------------------------------------------------------------
+      /////////////////////////////////////////////////// 
+      // double click :PS4_R3
+       if (event_press(PS4_R3) && !b_tap) {      
+                   combo_run(ONE_TAP);                  
+       // Second tap                                    
+       }else if (event_press(PS4_R3) && b_tap ){ 
+                  b_tap=FALSE;                         
+                  { combo_run(FAKE_SHOT); } //1. FAKE_SHOT
+       }                                               
+   //--------------------------------------------------------------
+                                                
+                                              
+     }// ON / OFF mods                          
+     //--------------------------------------------------------------
+                                                                     
+   //--------------------------------------------------------------
+} // end of main block                          
+                                                
+////////////////////////////////////////////////////////////////
+// COMBO BLOCKS   //////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+combo ONE_TAP {                                    
+    b_tap=TRUE;                                    
+    wait(timelimit); // wait for second tap 
+    b_tap=FALSE;                                  
+}                                              
+// DIRECTION OF LEFT ANALOG                                     
+//--------------------------------------------------------------
+combo DIRECTION_OF_L_ANALOG {                                   
+                                                                
+   block(SprintBtn,500);                                        
+   block(MOVE_X,1000);block(MOVE_Y,1000);  
+   if(ACTIVE > 0)  
+   {//------------------------------------------------           
+               
+     // Default Skill 
+    }//------------------------------------------------   
+               
+}        
+//--------------------------------------------------------------
+// end of DIRECTIONS                                            
+//--------------------------------------------------------------
+                                                                
+                                                                
+///////////////////////////////////////////////////////////////////
+// 1. Fake Shot           ////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+combo FAKE_SHOT {        
+	set_val(ShotBtn,100);  
+	wait(40);              
+	set_val(ShotBtn,100);  
+	set_val(PassBtn,100); 
+	wait(60);             
+	set_val(ShotBtn,0);  
+	set_val(PassBtn,100);
+	wait(60);           
+}                  
+//--------------------------------------------------------------
+//      Analog Functions                                        
+//--------------------------------------------------------------
+function LA (x,y){ 
+	set_val(MOVE_X,x);
+	set_val(MOVE_Y,y);
+}                  
+function LA_L_R() {          
+	if(right_on) {// right      
+		set_val(MOVE_X,inv(LY));  
+		set_val(MOVE_Y,LX);       
+	}                           
+	else {       //  left       
+	    set_val(MOVE_X,LY );    
+	    set_val(MOVE_Y,inv(LX)); 
+    }                         
+}                              
+function RA_L_R() {             
+	if(right_on) {// right          
+		set_val(SKILL_STICK_X,inv(LY));
+		set_val(SKILL_STICK_Y,LX);      
+	}                                  
+	else {       //  left               
+	    set_val(SKILL_STICK_X,LY );     
+	    set_val(SKILL_STICK_Y,inv(LX)); 
+    }                                
+}                                    
+function RA_OPP() {                  
+	if(!right_on) {// right             
+		set_val(SKILL_STICK_X,inv(LY));   
+		set_val(SKILL_STICK_Y,LX);        
+	}                                   
+	else {       //  left               
+	    set_val(SKILL_STICK_X,LY );     
+	    set_val(SKILL_STICK_Y,inv(LX)); 
+    }                                
+}                                    
+function RA_UP () {                  
+	set_val(SKILL_STICK_X,LX );        
+	set_val(SKILL_STICK_Y,LY );        
+}                                   
+function RA_DOWN () {               
+	set_val(SKILL_STICK_X,inv(LX) );   
+	set_val(SKILL_STICK_Y,inv(LY) );   
+}                                  
+function RA_ZERO () {             
+	set_val(SKILL_STICK_X,0 );      
+	set_val(SKILL_STICK_Y,0 );     
+}                             
+//--------------------------------------------------------------
+//SKILLS LED INDICATION                                         
+//--------------------------------------------------------------
+function colorled(a,b,c,d) { 
+set_led(LED_1,a);            
+set_led(LED_2,b);            
+set_led(LED_3,c);            
+set_led(LED_4,d);            
+}// func end                             
