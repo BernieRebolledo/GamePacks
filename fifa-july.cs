@@ -180,8 +180,8 @@ main {
   //  Penalty kicks
   if(onoff_penalty) {
     // Fast penalty kick 
-    if(get_val(PS4_TOUCH)) {
-      set_val(PS4_TOUCH, 0);
+    if(get_val(PS4_TRIANGLE)) {
+      set_val(PS4_TRIANGLE, 0);
       set_val(PS4_L1,100);
       set_val(PS4_LX, 78);                         
       set_val(PS4_LY,-38);
@@ -236,9 +236,9 @@ main {
 	// hold R2/RT and press SHARE/MENU           
 	if(get_val(PS4_R1)){                          
     if(event_press(PS4_SHARE)){             
-      onoff_FK = !onoff_FK;
-      set_val(PS4_SHARE,0);               
-    }                                                           
+      onoff_FK = !onoff_FK;               
+    }
+    set_val(PS4_SHARE,0);                                                          
   }                                                                                       
   set_val(TRACE_1,onoff_FK);                 
   set_val(TRACE_2,FK_mode);                   
@@ -260,23 +260,23 @@ main {
   			// SET THE POWER of the SHOOT                  
   			if(event_press(PS4_UP)){
           shot_power = 345;
-          set_val(PS4_UP,0);
         } 
                                                        
   			if(event_press(PS4_RIGHT)){
           shot_power = 375;
-          set_val(PS4_RIGHT,0);
         } 
                                                        
   			if(event_press(PS4_DOWN)){
           shot_power = 405;
-          set_val(PS4_DOWN,0);
         }  
                                                        
   			if(event_press(PS4_LEFT)){
           shot_power = 445;
-          set_val(PS4_LEFT,0);
-        }                                             	                         
+        }  
+        set_val(PS4_LEFT,0);
+        set_val(PS4_DOWN,0);
+        set_val(PS4_RIGHT,0);
+        set_val(PS4_UP,0);                                           	                         
       }                                                
 		///////////////////////////////////////////      
 		// TOP SPIN FK
@@ -293,7 +293,7 @@ main {
 		// left side                                    
 		if(get_val(XB1_X)){                             
 			FK_mode = SIDE_SPIN;
-      fk_timing = 2170;
+      fk_timing = 2150;
 			side_dir = -100;
       set_val(XB1_X,0);
 			//shot_power = 300;                           
@@ -304,7 +304,7 @@ main {
 		// right side                                   
 		if(get_val(XB1_B)){                             
 			FK_mode = SIDE_SPIN;
-      fk_timing = 2170;
+      fk_timing = 2150;
 			side_dir =  100;
       set_val(XB1_B,0);
 			//shot_power = 300;                           
@@ -315,7 +315,7 @@ main {
 		///////////////////////////////////////////                                             
 		if(get_val(XB1_A)){                             
 			FK_mode = KNUCKLEBALL_FK;
-      fk_timing = 2170;
+      fk_timing = 2150;
 			shot_power = 550;
       set_val(XB1_A,0);
 			combo_run(SHOT_POWER);
@@ -325,7 +325,7 @@ main {
     ///////////////////////////////////////////                                                  
 		if(get_val(PS4_L3)){                        
 			FK_mode = 0;
-      fk_timing = 2170;
+      fk_timing = 2150;
       set_val(PS4_L3,0);
 			combo_run(SHOT_POWER);
 		}                                             
@@ -482,7 +482,7 @@ combo PK_TimedFinish {
     set_val(ShotBtn, 100);             
     wait(250);  
     set_val(ShotBtn, 0);             
-    wait(2250); 
+    wait(2150); 
     set_val(ShotBtn, 100);             
     wait(200);  
     set_val(ShotBtn, 0);            
