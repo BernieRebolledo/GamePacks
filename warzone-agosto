@@ -49,9 +49,7 @@ int current_x, current_y;
  
     //---aim corrections variables
 int ads_fire_sens, Sens, hip_fire_sens;
- 
- 
-//Sweet_Evil 7.10
+ //Sweet_Evil 7.10
 int mvt = 0;
 int Current_State          = 0;
 int Aim_Abuse_State        = 2;
@@ -81,21 +79,13 @@ int no_recoil;
 int akimbo;
 int weapon;
 int _currentSlot;
-
+int mod;
 init {
     _currentSlot = get_slot();
    
 /////////////////////////////////////////////////////////////  
 //-------->>>>START ADJUST YOUR RECOIL VALUES HERE<<<<------
-    ar_sY_primary = 27;    // start value --   higher numbers increase pull down
-    ar_eY_primary = 26;    // end value   --  higher numbers increase pull down
-    ar_tm_primary = 2900;  // time value - controls time between start to end value
-    ar_sX_primary = -1; // horizontal value
-   
-    ar_sY_secondary = 44;    // start value --   higher numbers increase pull down
-    ar_eY_secondary= 30;    // end value   --  higher numbers increase pull down
-    ar_tm_secondary = 3200;  // time value - controls time between start to end value
-    ar_sX_secondary = 7; // horizontal value
+
 //--TO INVERT VERTICAL LOOK insert negative (-) numbers in the start and end value and use the in game menu to invert your look
  
    /* i will be releasing more precise values slowly in the forum      
@@ -118,8 +108,6 @@ uzi         0       29        0         1
  
     //------>>>>END ANTI RECOIL VALUE ADJUSTMENT HERE END<<<<--------*/
   //////////////////////////////////////////////////////////////////////
- 
-
 }
 main
 {
@@ -148,36 +136,74 @@ main
      //DPAD-UP
      if(event_press(PS4_UP))//change to PS4_SHARE or PS4_OPTIONS if you want to ping while ads
                  {
-                 quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                
-                 easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
-                 rapid_fire=FALSE;       //rapid fire [TRUE = on FALSE = off]
-                 akimbo=FALSE;       //akimbo rapid fire [TRUE = on FALSE = off]
-                 auto_hold_breath=FALSE; //auto hold breath [TRUE = on FALSE = off]
-                 no_recoil=TRUE;         //anti recoil [TRUE = on  FALSE = off]
-                 fnotify (0);   // rumble   [ 0 = double  1 = single]              
-                // __(4);                   // colour
+                        // m4a1
+                        ar_sY_primary = 27;    // start value --   higher numbers increase pull down
+                        ar_eY_primary = 26;    // end value   --  higher numbers increase pull down
+                        ar_tm_primary = 1500;  // time value - controls time between start to end value
+                        ar_sX_primary = 0; // horizontal value
+                        // fal
+                        ar_sY_secondary = 44;    // start value --   higher numbers increase pull down
+                        ar_eY_secondary= 30;    // end value   --  higher numbers increase pull down
+                        ar_tm_secondary = 1500;  // time value - controls time between start to end value
+                        ar_sX_secondary = 0; // horizontal value
+
+                        //MOD
+                        mod = 1;
+                        quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                
+                        easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
+                        rapid_fire=FALSE;       //rapid fire [TRUE = on FALSE = off]
+                        akimbo=FALSE;       //akimbo rapid fire [TRUE = on FALSE = off]
+                        auto_hold_breath=FALSE; //auto hold breath [TRUE = on FALSE = off]
+                        no_recoil=TRUE;         //anti recoil [TRUE = on  FALSE = off]
+                        fnotify (0);   // rumble   [ 0 = double  1 = single]              
+                        // __(4);                   // colour
                  }  
  
        //D-PAD DOWN
      if(event_press(PS4_DOWN))    //D-PAD DOWN
-                 {
-                 quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                
-                 easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
-                 rapid_fire=FALSE;      //rapid fire [TRUE = on FALSE = off]
-                 akimbo=FALSE;       //akimbo rapid fire [TRUE = on FALSE = off]
-                 auto_hold_breath=FALSE;//auto hold breath [TRUE = on FALSE = off]
-                 no_recoil=FALSE;       //anti recoil [TRUE = on FALSE = off]
-                 fnotify (0);   // rumble   [ 0 = double  1 = single]              
-               //  __(1);                  // colour        
+                 {      // m4a1
+                        ar_sY_primary = 27;    // start value --   higher numbers increase pull down
+                        ar_eY_primary = 26;    // end value   --  higher numbers increase pull down
+                        ar_tm_primary = 1500;  // time value - controls time between start to end value
+                        ar_sX_primary = 0; // horizontal value
+                        // fal
+                        ar_sY_secondary = 44;    // start value --   higher numbers increase pull down
+                        ar_eY_secondary= 30;    // end value   --  higher numbers increase pull down
+                        ar_tm_secondary = 1500;  // time value - controls time between start to end value
+                        ar_sX_secondary = 0; // horizontal value
+
+                        //MOD
+                        mod = 2;
+                   quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                
+                   easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
+                   rapid_fire=FALSE;      //rapid fire [TRUE = on FALSE = off]
+                   akimbo=FALSE;       //akimbo rapid fire [TRUE = on FALSE = off]
+                   auto_hold_breath=FALSE;//auto hold breath [TRUE = on FALSE = off]
+                   no_recoil=FALSE;       //anti recoil [TRUE = on FALSE = off]
+                   fnotify (0);   // rumble   [ 0 = double  1 = single]              
+                    //  __(1);                  // colour        
                   }
  
  
      //DPAD-RIGHT
      if(event_press(PS4_RIGHT))   //DPAD-RIGHT
                   {
+                        // mp5
+                        ar_sY_primary = 27;    // start value --   higher numbers increase pull down
+                        ar_eY_primary = 26;    // end value   --  higher numbers increase pull down
+                        ar_tm_primary = 1500;  // time value - controls time between start to end value
+                        ar_sX_primary = 0; // horizontal value
+                        // bruen
+                        ar_sY_secondary = 44;    // start value --   higher numbers increase pull down
+                        ar_eY_secondary= 30;    // end value   --  higher numbers increase pull down
+                        ar_tm_secondary = 1500;  // time value - controls time between start to end value
+                        ar_sX_secondary = 0; // horizontal value
+
+                        //MOD
+                        mod = 3;
                   quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                  
                   easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
-                  rapid_fire=TRUE;        //rapid fire [TRUE = on FALSE = off]  
+                  rapid_fire=FALSE;        //rapid fire [TRUE = on FALSE = off]  
                   akimbo=FALSE;       //akimbo rapid fire [TRUE = on FALSE = off]
                   auto_hold_breath=FALSE; //auto hold breath [TRUE = on FALSE = off]
                   no_recoil=FALSE;         //anti recoil [TRUE = on FALSE = off]
@@ -188,16 +214,29 @@ main
      //DPAD-LEFT
      if(event_press(PS4_LEFT))    //DPAD-LEFT
                  {
+                  //sniper mode
+                        // sniper
+                        ar_sY_primary = 27;    // start value --   higher numbers increase pull down
+                        ar_eY_primary = 26;    // end value   --  higher numbers increase pull down
+                        ar_tm_primary = 1500;  // time value - controls time between start to end value
+                        ar_sX_primary = 0; // horizontal value
+                        // fal
+                        ar_sY_secondary = 44;    // start value --   higher numbers increase pull down
+                        ar_eY_secondary= 30;    // end value   --  higher numbers increase pull down
+                        ar_tm_secondary = 1500;  // time value - controls time between start to end value
+                        ar_sX_secondary = 0; // horizontal value
+
+                        //MOD
+                        mod = 4;
                  quick_melee=TRUE;      // quick melee [TRUE = on FALSE = off]                
                  easy_prone=TRUE;         //easy prone / crouch [TRUE = on FALSE = off]
                  rapid_fire=FALSE;       //rapid fire [TRUE = on FALSE = off]
                  akimbo=TRUE;       //akimbo rapid fire [TRUE = on FALSE = off]
                  auto_hold_breath=TRUE; //auto hold breath [TRUE = on FALSE = off]
-      no_recoil=FALSE;        //anti recoil [TRUE = on FALSE = off]
+                 no_recoil=FALSE;        //anti recoil [TRUE = on FALSE = off]
                  fnotify (0);   // rumble   [ 0 = double  1 = single]              
-           // __(7)        // colour    
+                // __(7)        // colour    
                  }
-      //delete btn(PS4_UP); to ping while ads
 btn(PS4_SHARE);btn(PS4_LEFT);btn(PS4_RIGHT);btn(PS4_UP);btn(PS4_DOWN);}   // buttons console ignores while ads  
                    //-------->>>>END AIM DOWN SIGHTS MENU HERE END<<<<------                
                  /////////////////////////////////////////////////////////////
@@ -264,7 +303,7 @@ if(get_val(MELEE)&&!get_val(ADS))
 //-- easy plate
 if(easy_plate)
 {
-if(get_val(PS4_TRIANGLE)&&get_ptime(PS4_TRIANGLE)>350&& !edit)// change to double click if you want to put 3 plates after double pressing triangle
+if(get_val(PS4_TRIANGLE)&&get_ptime(PS4_TRIANGLE)>350)// change to double click if you want to put 3 plates after double pressing triangle
 combo_run(ceasy_plate);
 if(get_val(ADS)>10)
 combo_stop(ceasy_plate);
@@ -303,9 +342,12 @@ if (sticky_aim_assist)
  if(get_val(ADS) && event_press(FIRE)) {
             combo_run(ping);
         }
- if(event_press(PS4_TRIANGLE) || (event_press(PS4_DOWN) && !get_val(PS4_L2)))
+ if(event_press(PS4_TRIANGLE) || (event_press(PS4_DOWN) && get_val(PS4_L2)))
     {
-        weapon=!weapon;          
+        weapon=!weapon;
+        if (mod==1){
+          rapid_fire=!rapid_fire;
+        }         
     }
 //-- aim perfection(sweet_evil_14)
 if(aim_perfection)
@@ -352,17 +394,26 @@ if(get_val(ADS))
         Aim_Abuse_State = Aim_Correction;
         }
         }
-if (weapon && no_recoil){
-    __(6);
+if (!mod || mod ==2){
+    color(0,0,0,0);
 }
-if (!weapon && no_recoil){
-    __(2);
+if (mod==1 && !weapon){
+    color(2,0,0,0);
 }
-if (!no_recoil){
-    __(0);
+if (mod==1 && rapid_fire){
+    color(2,0,2,0);
+}
+if (mod==3 && !weapon){
+    color(0,2,0,0);
+}
+if (mod==3 && weapon){
+    color(0,2,2,0);
+}
+if (mod==4){
+  color(2,2,2,2);
 }
 //-- anti recoil                
-if (no_recoil && weapon)
+if (no_recoil && !weapon)
     {
         if(ar_sY_primary < ar_eY_primary)interval = 1;
             else interval = -1;
@@ -384,7 +435,7 @@ if (no_recoil && weapon)
         }
     }
    
-    if (no_recoil && !weapon)
+    if (no_recoil && weapon)
     {
         if(ar_sY_secondary < ar_eY_secondary)interval = 1;
             else interval = -1;
@@ -574,13 +625,12 @@ function xy_val(f_axis,f_val)
 }
  
  
-function __(col){
-    ledz=0;
-    while(ledz < 3){
-        set_led(ledz, test_bit(col, ledz));
-        ledz++;
-    }
-    }
+function color(a,b,c,d){
+  set_led(LED_1,a);
+  set_led(LED_2,b);
+  set_led(LED_3,c);
+  set_led(LED_4,d);
+}
  
 function fnotify(pos)
        {
